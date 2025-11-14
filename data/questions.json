@@ -1,0 +1,73 @@
+{
+  "questions": [
+    {
+      "text": "Q1: I am using unlimited welcome plan in Verizon and want to switch to unlimited ultimate. Could you please provide all the perks and benefits I will get from this top tier plan?",
+      "chatgpt5": {
+        "websearch": [
+          "Unlimited premium 5G data",
+          "50GB mobile hotspot",
+          "Disney+ included for 6 months",
+          "Apple Music free for 6 months"
+        ],
+        "deepresearch": [
+          "Comprehensive plan comparison",
+          "Cost-benefit analysis included",
+          "International roaming details",
+          "Device upgrade eligibility"
+        ],
+        "agent": [
+          "Automated plan switch assistance",
+          "Best time to upgrade analysis",
+          "Promotional offers available",
+          "Bill impact calculation"
+        ]
+      },
+      "gemini25": {
+        "websearch": [
+          "5G Ultra Wideband access",
+          "Mobile hotspot 50GB",
+          "Streaming service perks",
+          "Priority network access"
+        ],
+        "deepresearch": [
+          "Detailed feature breakdown",
+          "Comparison with competitors",
+          "Long-term cost savings",
+          "Network performance data"
+        ]
+      },
+      "perplexity": {
+        "search": [
+          "Plan pricing details",
+          "Key features listed",
+          "Upgrade process explained"
+        ],
+        "research": [
+          "In-depth plan analysis",
+          "User reviews compiled",
+          "Expert recommendations"
+        ],
+        "labs": [
+          "Experimental features info",
+          "Beta testing opportunities"
+        ],
+        "learn": [
+          "Educational content",
+          "Plan terminology explained"
+        ],
+        "cometbrowser": [
+          "Web-sourced comparisons",
+          "Real-time pricing updates"
+        ]
+      },
+      "verizonai": {
+        "search": [
+          "Official Verizon plan details",
+          "Current promotions",
+          "Upgrade eligibility check",
+          "Customer service contact"
+        ]
+      }
+    }
+  ]
+}
