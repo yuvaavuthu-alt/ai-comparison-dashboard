@@ -9,6 +9,19 @@ document.addEventListener('DOMContentLoaded', async () => {
         renderDashboard();
         setupNavigation();
         setupModal();
+        
+        // Set up MutationObserver after initial render
+        setTimeout(() => {
+            const container = document.querySelector('.comparison-table');
+            if (container) {
+                observer.observe(container, {
+                    childList: true,
+                    subtree: true,
+                    attributes: true,
+                    attributeFilter: ['style', 'class']
+                });
+            }
+        }, 1000);
     } catch (error) {
         console.error('Error loading data:', error);
         showError();
@@ -27,8 +40,17 @@ function renderDashboard() {
     
     renderQuestionTabs();
     
-    // Sync row heights after rendering
-    setTimeout(() => syncRowHeights(), 100);
+    // Wait for DOM to be fully updated, then sync multiple times
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            syncRowHeights();
+            // Additional syncs to catch any delayed rendering
+            setTimeout(() => syncRowHeights(), 50);
+            setTimeout(() => syncRowHeights(), 150);
+            setTimeout(() => syncRowHeights(), 300);
+            setTimeout(() => syncRowHeights(), 500);
+        });
+    });
 }
 
 // Render question navigation tabs
@@ -138,7 +160,14 @@ function navigateToQuestion(index) {
         wrapper.style.transform = `translateX(${offset}%)`;
         
         renderQuestionTabs();
-        syncRowHeights();
+        
+        // Sync after transition completes
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                syncRowHeights();
+                setTimeout(() => syncRowHeights(), 100);
+            });
+        });
     }
 }
 
@@ -221,15 +250,37 @@ function syncRowHeights() {
     const leftHeaders = document.querySelectorAll('.model-row-header');
     const rightRows = activeColumn.querySelectorAll('.result-row');
     
-    // Headers are now fixed height, no need to sync
+    if (leftHeaders.length !== rightRows.length) {
+        console.warn('Row count mismatch:', leftHeaders.length, 'vs', rightRows.length);
+        return;
+    }
+    
+    // Force a reflow to ensure accurate measurements
+    void document.body.offsetHeight;
     
     // Sync each row
     rightRows.forEach((rightRow, index) => {
         const leftHeader = leftHeaders[index];
-        if (leftHeader) {
-            const rightHeight = rightRow.offsetHeight;
-            leftHeader.style.height = `${rightHeight}px`;
-            leftHeader.style.minHeight = `${rightHeight}px`;
+        if (leftHeader && rightRow) {
+            // Reset heights first to get natural height
+            leftHeader.style.height = 'auto';
+            rightRow.style.minHeight = 'auto';
+            
+            // Force reflow
+            void leftHeader.offsetHeight;
+            void rightRow.offsetHeight;
+            
+            // Get the actual rendered height
+            const rightHeight = rightRow.getBoundingClientRect().height;
+            const leftHeight = leftHeader.getBoundingClientRect().height;
+            
+            // Use the larger height to ensure both align
+            const targetHeight = Math.max(rightHeight, leftHeight, 200); // Minimum 200px
+            
+            // Apply the height
+            leftHeader.style.height = `${targetHeight}px`;
+            leftHeader.style.minHeight = `${targetHeight}px`;
+            rightRow.style.minHeight = `${targetHeight}px`;
         }
     });
 }
@@ -245,7 +296,38 @@ function showError() {
     `;
 }
 
-// Resync heights on window resize
+// Resync heights on window resize with debounce
+let resizeTimeout;
 window.addEventListener('resize', () => {
-    syncRowHeights();
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+        syncRowHeights();
+    }, 150);
+});
+
+// Also sync when images/content loads
+window.addEventListener('load', () => {
+    // Wait for fonts to load
+    if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(() => {
+            requestAnimationFrame(() => {
+                syncRowHeights();
+                setTimeout(() => syncRowHeights(), 100);
+                setTimeout(() => syncRowHeights(), 300);
+            });
+        });
+    } else {
+        requestAnimationFrame(() => {
+            syncRowHeights();
+            setTimeout(() => syncRowHeights(), 100);
+            setTimeout(() => syncRowHeights(), 300);
+        });
+    }
+});
+
+// Use MutationObserver to watch for DOM changes and sync
+const observer = new MutationObserver(() => {
+    requestAnimationFrame(() => {
+        syncRowHeights();
+    });
 });
