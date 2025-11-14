@@ -5,67 +5,114 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Models Comparison Dashboard</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Verizon+NHG+TX:wght@400;700;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>AI Models Comparison Dashboard</h1>
-        </header>
-        
-        <div class="dashboard">
-            <!-- Header Row with AI Models -->
-            <div class="header-row">
-                <div class="question-header">Questions</div>
-                
-                <div class="model-group">
-                    <div class="model-name">ChatGPT-5</div>
-                    <div class="features">
-                        <div class="feature">Web Search</div>
-                        <div class="feature">Deep Research</div>
-                        <div class="feature">Agent</div>
+    <!-- Header -->
+    <header class="dashboard-header">
+        <div class="header-content">
+            <div class="logo-section">
+                <svg class="verizon-checkmark" viewBox="0 0 48 48">
+                    <path d="M18 36L6 24l2.8-2.8L18 30.4l21.2-21.2L42 12 18 36z" fill="currentColor"/>
+                </svg>
+                <h1 class="main-title">AI Models Comparison</h1>
+            </div>
+            <p class="header-subtitle">Comprehensive Benchmark Analysis Across Leading AI Platforms</p>
+        </div>
+    </header>
+    
+    <!-- Main Comparison Table -->
+    <main class="comparison-container">
+
+        <!-- Comparison Grid -->
+        <div class="comparison-table">
+            
+            <!-- Left Column: AI Model Names -->
+            <div class="models-column">
+                <div class="model-header-cell">
+                    <h2>AI Platform</h2>
+                    <!-- Question Navigation Tabs -->
+                    <div class="question-tabs" id="questionTabs">
+                        <!-- Tabs will be dynamically generated -->
                     </div>
                 </div>
                 
-                <div class="model-group">
-                    <div class="model-name">Gemini 2.5 Pro</div>
-                    <div class="features">
-                        <div class="feature">Web Search</div>
-                        <div class="feature">Deep Research</div>
+                <div class="model-row-header chatgpt-brand">
+                    <div class="model-info">
+                        <h3>ChatGPT-5</h3>
+                        <div class="mode-tags">
+                            <span class="mode-tag">Web Search</span>
+                            <span class="mode-tag">Deep Research</span>
+                            <span class="mode-tag">Agent Mode</span>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="model-group">
-                    <div class="model-name">Perplexity</div>
-                    <div class="features">
-                        <div class="feature">Search</div>
-                        <div class="feature">Research</div>
-                        <div class="feature">Labs</div>
-                        <div class="feature">Learn</div>
-                        <div class="feature">Comet Browser</div>
+                <div class="model-row-header gemini-brand">
+                    <div class="model-info">
+                        <h3>Gemini 2.5 Pro</h3>
+                        <div class="mode-tags">
+                            <span class="mode-tag">Web Search</span>
+                            <span class="mode-tag">Deep Research</span>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="model-group">
-                    <div class="model-name">Verizon AI</div>
-                    <div class="features">
-                        <div class="feature">Search</div>
+                <div class="model-row-header perplexity-brand">
+                    <div class="model-info">
+                        <h3>Perplexity</h3>
+                        <div class="mode-tags">
+                            <span class="mode-tag">Search</span>
+                            <span class="mode-tag">Research</span>
+                            <span class="mode-tag">Labs</span>
+                            <span class="mode-tag">Learn</span>
+                            <span class="mode-tag">Comet Browser</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="model-row-header verizon-brand">
+                    <div class="model-info">
+                        <h3>Verizon AI</h3>
+                        <div class="mode-tags">
+                            <span class="mode-tag">Search</span>
+                        </div>
                     </div>
                 </div>
             </div>
             
-            <!-- Data rows will be generated by JavaScript -->
-            <div id="data-rows"></div>
+            <!-- Scrollable Questions Area -->
+            <div class="questions-scroll-container" id="questionsContainer">
+                <div class="questions-wrapper" id="questionsWrapper">
+                    <!-- Questions will be dynamically inserted here -->
+                </div>
+            </div>
+            
+        </div>
+    </main>
+    
+    <!-- Detail Modal -->
+    <div id="detailModal" class="modal-overlay">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2 id="modalTitle">Detailed Analysis</h2>
+                <button class="modal-close" id="closeModal">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 6L6 18M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body" id="modalContent">
+                <!-- Content loaded dynamically -->
+            </div>
         </div>
     </div>
     
-    <!-- Modal for detailed view -->
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <div id="modal-body"></div>
-        </div>
-    </div>
+    <!-- Footer -->
+    <footer class="dashboard-footer">
+        <p>&copy; 2025 AI Innovation Team. All rights reserved.</p>
+    </footer>
     
     <script src="js/main.js"></script>
 </body>

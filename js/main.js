@@ -1,125 +1,251 @@
-// Load questions data
-async function loadData() {
-  try {
-      const response = await fetch('data/questions.json');
-      const data = await response.json();
-      renderDashboard(data);
-  } catch (error) {
-      console.error('Error loading data:', error);
-  }
+let currentQuestionIndex = 0;
+let questionsData = [];
+
+// Load data on page load
+document.addEventListener('DOMContentLoaded', async () => {
+    try {
+        const response = await fetch('data/questions.json');
+        questionsData = await response.json();
+        renderDashboard();
+        setupNavigation();
+        setupModal();
+    } catch (error) {
+        console.error('Error loading data:', error);
+        showError();
+    }
+});
+
+// Render the dashboard
+function renderDashboard() {
+    const wrapper = document.getElementById('questionsWrapper');
+    wrapper.innerHTML = '';
+    
+    questionsData.questions.forEach((q, index) => {
+        const column = createQuestionColumn(q, index + 1);
+        wrapper.appendChild(column);
+    });
+    
+    renderQuestionTabs();
+    
+    // Sync row heights after rendering
+    setTimeout(() => syncRowHeights(), 100);
 }
 
-// Render dashboard with questions and insights
-function renderDashboard(data) {
-  const dataRowsContainer = document.getElementById('data-rows');
-  
-  data.questions.forEach((question, qIndex) => {
-      const row = document.createElement('div');
-      row.className = 'data-row';
-      
-      // Question cell
-      const questionCell = document.createElement('div');
-      questionCell.className = 'question-cell';
-      questionCell.textContent = question.text;
-      row.appendChild(questionCell);
-      
-      // ChatGPT-5 data
-      const chatgptData = document.createElement('div');
-      chatgptData.className = 'model-data';
-      chatgptData.innerHTML = `
-          ${createInsightCard('chatgpt-5', 'websearch', qIndex + 1, question.chatgpt5.websearch)}
-          ${createInsightCard('chatgpt-5', 'deepresearch', qIndex + 1, question.chatgpt5.deepresearch)}
-          ${createInsightCard('chatgpt-5', 'agent', qIndex + 1, question.chatgpt5.agent)}
-      `;
-      row.appendChild(chatgptData);
-      
-      // Gemini 2.5 Pro data
-      const geminiData = document.createElement('div');
-      geminiData.className = 'model-data';
-      geminiData.innerHTML = `
-          ${createInsightCard('gemini-25', 'websearch', qIndex + 1, question.gemini25.websearch)}
-          ${createInsightCard('gemini-25', 'deepresearch', qIndex + 1, question.gemini25.deepresearch)}
-      `;
-      row.appendChild(geminiData);
-      
-      // Perplexity data
-      const perplexityData = document.createElement('div');
-      perplexityData.className = 'model-data';
-      perplexityData.innerHTML = `
-          ${createInsightCard('perplexity', 'search', qIndex + 1, question.perplexity.search)}
-          ${createInsightCard('perplexity', 'research', qIndex + 1, question.perplexity.research)}
-          ${createInsightCard('perplexity', 'labs', qIndex + 1, question.perplexity.labs)}
-          ${createInsightCard('perplexity', 'learn', qIndex + 1, question.perplexity.learn)}
-          ${createInsightCard('perplexity', 'cometbrowser', qIndex + 1, question.perplexity.cometbrowser)}
-      `;
-      row.appendChild(perplexityData);
-      
-      // Verizon AI data
-      const verizonData = document.createElement('div');
-      verizonData.className = 'model-data';
-      verizonData.innerHTML = `
-          ${createInsightCard('verizon-ai', 'search', qIndex + 1, question.verizonai.search)}
-      `;
-      row.appendChild(verizonData);
-      
-      dataRowsContainer.appendChild(row);
-  });
-  
-  // Add click event listeners
-  document.querySelectorAll('.insight-card').forEach(card => {
-      card.addEventListener('click', function() {
-          const model = this.dataset.model;
-          const feature = this.dataset.feature;
-          const question = this.dataset.question;
-          loadDetailedView(model, feature, question);
-      });
-  });
+// Render question navigation tabs
+function renderQuestionTabs() {
+    const tabsContainer = document.getElementById('questionTabs');
+    if (!tabsContainer) return;
+    
+    tabsContainer.innerHTML = '';
+    
+    questionsData.questions.forEach((q, index) => {
+        const tab = document.createElement('button');
+        tab.className = `question-tab ${index === currentQuestionIndex ? 'active' : ''}`;
+        tab.textContent = `Q${index + 1}`;
+        tab.onclick = () => navigateToQuestion(index);
+        tabsContainer.appendChild(tab);
+    });
 }
 
-// Create insight card HTML
-function createInsightCard(model, feature, questionNum, insights) {
-  const bulletPoints = insights.map(insight => `<li>${insight}</li>`).join('');
-  return `
-      <div class="insight-card" data-model="${model}" data-feature="${feature}" data-question="q${questionNum}">
-          <ul>${bulletPoints}</ul>
-          <div class="click-hint">Click for details</div>
-      </div>
-  `;
+// Create a question column
+function createQuestionColumn(question, qNum) {
+    const column = document.createElement('div');
+    column.className = 'question-column';
+    
+    // Question header
+    const header = document.createElement('div');
+    header.className = 'question-header';
+    header.innerHTML = `
+        <p class="question-text">${question.text}</p>
+        <div class="question-number">${qNum}</div>
+    `;
+    column.appendChild(header);
+    
+    // ChatGPT row
+    column.appendChild(createResultRow('chatgpt-result', [
+        { mode: 'Web Search', insights: question.chatgpt5.websearch, slug: 'websearch' },
+        { mode: 'Deep Research', insights: question.chatgpt5.deepresearch, slug: 'deepresearch' },
+        { mode: 'Agent', insights: question.chatgpt5.agent, slug: 'agent' }
+    ], 'chatgpt-5', qNum));
+    
+    // Gemini row
+    column.appendChild(createResultRow('gemini-result', [
+        { mode: 'Web Search', insights: question.gemini25.websearch, slug: 'websearch' },
+        { mode: 'Deep Research', insights: question.gemini25.deepresearch, slug: 'deepresearch' }
+    ], 'gemini-25', qNum));
+    
+    // Perplexity row
+    column.appendChild(createResultRow('perplexity-result', [
+        { mode: 'Search', insights: question.perplexity.search, slug: 'search' },
+        { mode: 'Research', insights: question.perplexity.research, slug: 'research' },
+        { mode: 'Labs', insights: question.perplexity.labs, slug: 'labs' },
+        { mode: 'Learn', insights: question.perplexity.learn, slug: 'learn' },
+        { mode: 'Comet Browser', insights: question.perplexity.cometbrowser, slug: 'cometbrowser' }
+    ], 'perplexity', qNum));
+    
+    // Verizon AI row
+    column.appendChild(createResultRow('verizon-result', [
+        { mode: 'Search', insights: question.verizonai.search, slug: 'search' }
+    ], 'verizon-ai', qNum));
+    
+    return column;
 }
 
-// Load detailed view in modal
-async function loadDetailedView(model, feature, question) {
-  const modal = document.getElementById('modal');
-  const modalBody = document.getElementById('modal-body');
-  
-  try {
-      const response = await fetch(`data/details/${model}-${feature}-${question}.md`);
-      const markdownText = await response.text();
-      
-      // Convert markdown to HTML
-      modalBody.innerHTML = marked.parse(markdownText);
-      modal.style.display = 'block';
-  } catch (error) {
-      modalBody.innerHTML = `<h2>Details</h2><p>Content not found for ${model} - ${feature} - ${question}</p>`;
-      modal.style.display = 'block';
-  }
+// Create result row
+function createResultRow(className, modes, model, qNum) {
+    const row = document.createElement('div');
+    row.className = `result-row ${className}`;
+    
+    const modesContainer = document.createElement('div');
+    modesContainer.className = 'result-modes';
+    
+    modes.forEach(({ mode, insights, slug }) => {
+        // Skip if insights is undefined or not an array
+        if (!insights || !Array.isArray(insights)) {
+            console.warn(`Missing insights for ${model} - ${slug}`);
+            return;
+        }
+        
+        const modeResult = document.createElement('div');
+        modeResult.className = 'mode-result';
+        modeResult.onclick = () => openModal(model, slug, qNum);
+        
+        modeResult.innerHTML = `
+            <div class="mode-name">${mode}</div>
+            <ul class="insights-list">
+                ${insights.map(insight => `<li>${insight}</li>`).join('')}
+            </ul>
+        `;
+        
+        modesContainer.appendChild(modeResult);
+    });
+    
+    row.appendChild(modesContainer);
+    return row;
 }
 
-// Modal close functionality
-document.addEventListener('DOMContentLoaded', function() {
-  const modal = document.getElementById('modal');
-  const closeBtn = document.querySelector('.close');
-  
-  closeBtn.onclick = function() {
-      modal.style.display = 'none';
-  }
-  
-  window.onclick = function(event) {
-      if (event.target == modal) {
-          modal.style.display = 'none';
-      }
-  }
-  
-  // Load data on page load
-  loadData();
+// Setup navigation
+function setupNavigation() {
+    // Navigation is now handled by question tabs
+}
+
+// Navigate to specific question
+function navigateToQuestion(index) {
+    if (index >= 0 && index < questionsData.questions.length) {
+        currentQuestionIndex = index;
+        const wrapper = document.getElementById('questionsWrapper');
+        const offset = -currentQuestionIndex * 100;
+        wrapper.style.transform = `translateX(${offset}%)`;
+        
+        renderQuestionTabs();
+        syncRowHeights();
+    }
+}
+
+// Setup modal
+function setupModal() {
+    const modal = document.getElementById('detailModal');
+    const closeBtn = document.getElementById('closeModal');
+    
+    closeBtn.addEventListener('click', () => closeModal());
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+    
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModal();
+    });
+}
+
+// Open modal
+async function openModal(model, mode, qNum) {
+    const modal = document.getElementById('detailModal');
+    const title = document.getElementById('modalTitle');
+    const content = document.getElementById('modalContent');
+    
+    title.textContent = `${formatModelName(model)} - ${formatModeName(mode)}`;
+    content.innerHTML = '<p style="text-align: center; padding: 60px; color: #a3a3a3;">Loading...</p>';
+    
+    modal.classList.add('active');
+    
+    try {
+        const response = await fetch(`data/details/${model}-${mode}-q${qNum}.md`);
+        if (!response.ok) throw new Error('Content not found');
+        
+        const markdown = await response.text();
+        content.innerHTML = marked.parse(markdown);
+    } catch (error) {
+        content.innerHTML = `
+            <h2>Content Not Available</h2>
+            <p>Detailed analysis has not been added yet.</p>
+        `;
+    }
+}
+
+// Close modal
+function closeModal() {
+    document.getElementById('detailModal').classList.remove('active');
+}
+
+// Format model name
+function formatModelName(model) {
+    const names = {
+        'chatgpt-5': 'ChatGPT-5',
+        'gemini-25': 'Gemini 2.5 Pro',
+        'perplexity': 'Perplexity',
+        'verizon-ai': 'Verizon AI'
+    };
+    return names[model] || model;
+}
+
+// Format mode name
+function formatModeName(mode) {
+    const modes = {
+        'websearch': 'Web Search',
+        'deepresearch': 'Deep Research',
+        'agent': 'Agent Mode',
+        'search': 'Search',
+        'research': 'Research',
+        'labs': 'Labs',
+        'learn': 'Learn',
+        'cometbrowser': 'Comet Browser'
+    };
+    return modes[mode] || mode;
+}
+
+// Sync row heights between left sidebar and right content
+function syncRowHeights() {
+    const activeColumn = document.querySelectorAll('.question-column')[currentQuestionIndex];
+    if (!activeColumn) return;
+    
+    const leftHeaders = document.querySelectorAll('.model-row-header');
+    const rightRows = activeColumn.querySelectorAll('.result-row');
+    
+    // Headers are now fixed height, no need to sync
+    
+    // Sync each row
+    rightRows.forEach((rightRow, index) => {
+        const leftHeader = leftHeaders[index];
+        if (leftHeader) {
+            const rightHeight = rightRow.offsetHeight;
+            leftHeader.style.height = `${rightHeight}px`;
+            leftHeader.style.minHeight = `${rightHeight}px`;
+        }
+    });
+}
+
+// Show error
+function showError() {
+    const wrapper = document.getElementById('questionsWrapper');
+    wrapper.innerHTML = `
+        <div style="padding: 60px; text-align: center;">
+            <h2 style="color: #f50a23;">Error Loading Data</h2>
+            <p>Please refresh the page.</p>
+        </div>
+    `;
+}
+
+// Resync heights on window resize
+window.addEventListener('resize', () => {
+    syncRowHeights();
 });
