@@ -70,71 +70,215 @@
       }
     },
     {
-      "text": "What are the current device trade-in offers for upgrading to the latest iPhone 17 Pro Max on Verizon?",
+      "text": "I've uploaded my last six Verizon wireless bills as PDF files. Please read them and: (1) create a month-by-month table of total charges per line, including taxes and fees, (2) list any one-time charges, late fees, or add-on subscriptions, and (3) recommend specific changes (plan changes, removing add-ons, discounts like Auto Pay/Paperless) that would lower my overall Verizon bill.",
       "chatgpt5": {
         "websearch": [
-          "Trade-in values up to $1000",
-          "Eligible devices listed",
-          "Monthly credit breakdown",
-          "Contract requirements"
+          "PDF bill parsing capabilities",
+          "Auto Pay discount information",
+          "Paperless billing savings",
+          "Common add-on subscription costs"
         ],
         "deepresearch": [
-          "Historical trade-in analysis",
-          "Best timing for trade-in",
-          "Comparison across carriers",
-          "Device condition impact"
+          "Historical bill trend analysis",
+          "Cost optimization strategies",
+          "Plan comparison with current usage",
+          "Industry benchmark comparisons"
         ],
         "agent": [
-          "Personalized trade-in estimate",
-          "Eligibility check automation",
-          "Best upgrade path analysis",
-          "Savings calculation"
+          "Automated PDF extraction and analysis",
+          "Personalized savings recommendations",
+          "Bill breakdown automation",
+          "Cost reduction action plan"
         ]
       },
       "gemini25": {
         "websearch": [
-          "iPhone 15 Pro Max offers",
-          "Trade-in device compatibility",
-          "Monthly installment options",
-          "Promotional period details"
+          "Verizon bill structure explained",
+          "Available discount programs",
+          "Add-on removal options",
+          "Plan optimization tools"
         ],
         "deepresearch": [
-          "Competitive carrier analysis",
-          "Long-term cost comparison",
-          "Device value depreciation",
-          "Upgrade cycle optimization"
+          "Multi-month bill pattern analysis",
+          "Cost-saving opportunity identification",
+          "Competitive plan comparisons",
+          "Long-term savings projections"
         ]
       },
       "perplexity": {
         "search": [
-          "Current trade-in values",
-          "Eligible old devices",
-          "Promotional requirements"
+          "Verizon bill analysis tools",
+          "Discount eligibility requirements",
+          "Add-on subscription costs",
+          "Plan change options"
         ],
         "research": [
-          "Multi-carrier comparison",
-          "Best value analysis",
-          "Expert recommendations"
+          "Bill optimization best practices",
+          "Cost reduction case studies",
+          "Expert savings recommendations",
+          "Hidden fee identification"
         ],
         "labs": [
-          "AI-powered value prediction",
-          "Future offer forecasting"
+          "AI-powered bill analysis",
+          "Predictive cost modeling"
         ],
         "learn": [
-          "Trade-in process explained",
-          "How valuations work"
+          "Understanding Verizon bill structure",
+          "How to identify unnecessary charges"
         ],
         "cometbrowser": [
-          "Live offer tracking",
-          "Real-time price updates"
+          "Real-time plan pricing",
+          "Current promotion tracking"
         ]
       },
       "verizonai": {
         "search": [
-          "Official trade-in calculator",
-          "Device assessment guide",
-          "Step-by-step process",
-          "Store vs online comparison"
+          "Official bill analysis tools",
+          "Account optimization recommendations",
+          "Available discounts and promotions",
+          "Customer service contact options"
+        ]
+      }
+    },
+    {
+      "text": "I'm planning to upgrade two of my Verizon lines to new 5G phones. Compare Verizon's current options for buying recent iPhone and Android flagship devices (full price, monthly installments, and promotions with trade-in), and tell me which combination gives the lowest total cost over 36 months for a family of four, assuming two existing phones are eligible for trade-in.",
+      "chatgpt5": {
+        "websearch": [
+          "Current iPhone flagship pricing",
+          "Android flagship device options",
+          "Trade-in promotion details",
+          "Monthly installment plans"
+        ],
+        "deepresearch": [
+          "36-month total cost analysis",
+          "Trade-in value optimization",
+          "Family plan discount calculations",
+          "Best combination scenarios"
+        ],
+        "agent": [
+          "Automated cost comparison tool",
+          "Personalized upgrade recommendations",
+          "Trade-in eligibility assessment",
+          "Optimal purchase strategy"
+        ]
+      },
+      "gemini25": {
+        "websearch": [
+          "Latest iPhone models and pricing",
+          "Top Android flagship devices",
+          "Verizon upgrade promotions",
+          "Trade-in program details"
+        ],
+        "deepresearch": [
+          "Comprehensive cost comparison",
+          "Long-term financial impact",
+          "Device value depreciation analysis",
+          "Family plan optimization"
+        ]
+      },
+      "perplexity": {
+        "search": [
+          "Current device pricing",
+          "Trade-in values",
+          "Promotional offers",
+          "Installment plan terms"
+        ],
+        "research": [
+          "Total cost of ownership analysis",
+          "Best value device combinations",
+          "Expert upgrade recommendations",
+          "Cost-saving strategies"
+        ],
+        "labs": [
+          "AI-powered cost optimization",
+          "Predictive pricing models"
+        ],
+        "learn": [
+          "Understanding upgrade options",
+          "How trade-in promotions work"
+        ],
+        "cometbrowser": [
+          "Live pricing updates",
+          "Real-time promotion tracking"
+        ]
+      },
+      "verizonai": {
+        "search": [
+          "Official upgrade calculator",
+          "Device comparison tool",
+          "Trade-in value estimator",
+          "Family plan pricing"
+        ]
+      }
+    },
+    {
+      "text": "With Thanksgiving and Christmas promotions coming up, what are the best Verizon deals that bundle wireless plans with Verizon Fios Home Internet (where available) or Verizon 5G Home Internet, plus any included perks like streaming services, cloud storage, or device protection? Please focus on offers that maximize total savings for a household with four unlimited lines plus home internet.",
+      "chatgpt5": {
+        "websearch": [
+          "Holiday bundle promotions",
+          "Fios and wireless bundle deals",
+          "5G Home Internet packages",
+          "Included streaming services"
+        ],
+        "deepresearch": [
+          "Historical holiday promotion patterns",
+          "Bundle savings calculations",
+          "Perk value analysis",
+          "Total household cost optimization"
+        ],
+        "agent": [
+          "Personalized bundle recommendations",
+          "Savings calculator automation",
+          "Promotion timing analysis",
+          "Best deal identification"
+        ]
+      },
+      "gemini25": {
+        "websearch": [
+          "Current bundle offerings",
+          "Holiday promotion details",
+          "Fios availability checker",
+          "5G Home coverage areas"
+        ],
+        "deepresearch": [
+          "Comprehensive bundle comparison",
+          "Long-term savings projections",
+          "Perk value assessment",
+          "Market competitive analysis"
+        ]
+      },
+      "perplexity": {
+        "search": [
+          "Holiday bundle promotions",
+          "Fios bundle options",
+          "5G Home packages",
+          "Included perks and services"
+        ],
+        "research": [
+          "Bundle deal analysis",
+          "Maximum savings strategies",
+          "Expert recommendations",
+          "Promotion timing insights"
+        ],
+        "labs": [
+          "AI-powered deal finder",
+          "Savings optimization models"
+        ],
+        "learn": [
+          "Understanding bundle deals",
+          "How to maximize savings"
+        ],
+        "cometbrowser": [
+          "Live promotion tracking",
+          "Real-time deal updates"
+        ]
+      },
+      "verizonai": {
+        "search": [
+          "Official bundle calculator",
+          "Current promotions",
+          "Fios availability tool",
+          "5G Home coverage map"
         ]
       }
     }
