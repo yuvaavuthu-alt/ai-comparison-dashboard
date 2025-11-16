@@ -13,7 +13,7 @@ A comprehensive, interactive dashboard for comparing AI model capabilities acros
 
 ## 🎨 Supported AI Platforms
 
-### ChatGPT-5
+### ChatGPT-5.1
 - **Modes**: Web Search, Deep Research, Agent Mode
 - **Brand Color**: `#74AA9C` (Official ChatGPT Green)
 
@@ -73,7 +73,7 @@ cd ai-comparison-dashboard
 ├── data/
 │   ├── questions.json     # Question prompts and AI insights
 │   └── details/           # Detailed analysis markdown files
-│       ├── chatgpt-5-websearch-q1.md
+│       ├── chatgpt-5-1-websearch-q1.md
 │       ├── gemini-25-websearch-q1.md
 │       ├── perplexity-search-q1.md
 │       └── ...
@@ -91,7 +91,7 @@ Edit `data/questions.json` to add new questions:
   "questions": [
     {
       "text": "Your question here",
-      "chatgpt5": {
+      "chatgpt51": {
         "websearch": ["Insight 1", "Insight 2"],
         "deepresearch": ["Insight 1", "Insight 2"],
         "agent": ["Insight 1", "Insight 2"]
@@ -124,11 +124,25 @@ Create markdown files in `data/details/` following this naming convention:
 ```
 
 **Examples**:
-- `chatgpt-5-websearch-q1.md`
+- `chatgpt-5-1-websearch-q1.md`
 - `gemini-25-deepresearch-q2.md`
 - `perplexity-search-q1.md`
 
 The markdown content will be rendered in the modal when users click on result cards.
+
+Each markdown file now ships with a standard template:
+
+```
+# ChatGPT-5.1 Web Search - Question 1
+
+## Question
+<original question text>
+
+## AI Response
+<!-- Paste the AI response for this mode/question here -->
+```
+
+Just replace the placeholder comment with the actual AI response you receive from the model.
 
 ## 🎯 Usage
 

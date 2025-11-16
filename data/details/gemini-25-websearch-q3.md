@@ -1,5 +1,7 @@
-# Gemini 2.5 Pro – Web Search – Q3
+# Gemini 2.5 Pro Web Search - Question 3
 
-- High level insight placeholders for Gemini 2.5 Pro Web Search responding to Q3.
-- Align key takeaways with the Verizon mobility context.
-- Flag any assumptions that require validation with up-to-date plan details.
+## Question
+With Thanksgiving and Christmas promotions coming up, what are the best Verizon deals that bundle wireless plans with Verizon Fios Home Internet (where available) or Verizon 5G Home Internet, plus any included perks like streaming services, cloud storage, or device protection? Please focus on offers that maximize total savings for a household with four unlimited lines plus home internet.
+
+## AI Response
+<!-- Paste the AI response for Web Search (Question 3) below. -->

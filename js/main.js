@@ -4,8 +4,23 @@ let questionsData = [];
 // Load data on page load
 document.addEventListener('DOMContentLoaded', async () => {
     try {
-        const response = await fetch('data/questions.json');
-        questionsData = await response.json();
+        const response = await fetch('./data/questions.json?v=' + Date.now());
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status} - ${response.statusText}`);
+        }
+        const jsonText = await response.text();
+        console.log('JSON received, length:', jsonText.length);
+        questionsData = JSON.parse(jsonText);
+        
+        // Validate data structure
+        if (!questionsData || !questionsData.questions || !Array.isArray(questionsData.questions)) {
+            throw new Error('Invalid data structure - missing questions array');
+        }
+        if (questionsData.questions.length === 0) {
+            throw new Error('No questions found in data');
+        }
+        console.log('Loaded', questionsData.questions.length, 'questions');
+        
         renderDashboard();
         setupNavigation();
         setupModal();
@@ -24,7 +39,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         }, 1000);
     } catch (error) {
         console.error('Error loading data:', error);
-        showError();
+        console.error('Error details:', error.message);
+        showError(error.message);
     }
 });
 
@@ -85,10 +101,10 @@ function createQuestionColumn(question, qNum) {
     
     // ChatGPT row
     column.appendChild(createResultRow('chatgpt-result', [
-        { mode: 'Web Search', insights: question.chatgpt5.websearch, slug: 'websearch' },
-        { mode: 'Deep Research', insights: question.chatgpt5.deepresearch, slug: 'deepresearch' },
-        { mode: 'Agent', insights: question.chatgpt5.agent, slug: 'agent' }
-    ], 'chatgpt-5', qNum));
+        { mode: 'Web Search', insights: question.chatgpt51.websearch, slug: 'websearch' },
+        { mode: 'Deep Research', insights: question.chatgpt51.deepresearch, slug: 'deepresearch' },
+        { mode: 'Agent', insights: question.chatgpt51.agent, slug: 'agent' }
+    ], 'chatgpt-5-1', qNum));
     
     // Gemini row
     column.appendChild(createResultRow('gemini-result', [
@@ -99,9 +115,6 @@ function createQuestionColumn(question, qNum) {
     // Perplexity row
     column.appendChild(createResultRow('perplexity-result', [
         { mode: 'Search', insights: question.perplexity.search, slug: 'search' },
-        { mode: 'Research', insights: question.perplexity.research, slug: 'research' },
-        { mode: 'Labs', insights: question.perplexity.labs, slug: 'labs' },
-        { mode: 'Learn', insights: question.perplexity.learn, slug: 'learn' },
         { mode: 'Comet Browser', insights: question.perplexity.cometbrowser, slug: 'cometbrowser' }
     ], 'perplexity', qNum));
     
@@ -191,22 +204,43 @@ async function openModal(model, mode, qNum) {
     const modal = document.getElementById('detailModal');
     const title = document.getElementById('modalTitle');
     const content = document.getElementById('modalContent');
-    
+
+    // Build the expected file name and URL
+    const fileName = `${model}-${mode}-q${qNum}.md`;
+    const url = `./data/details/${fileName}?v=${Date.now()}`; // cache-buster
+
     title.textContent = `${formatModelName(model)} - ${formatModeName(mode)}`;
     content.innerHTML = '<p style="text-align: center; padding: 60px; color: #a3a3a3;">Loading...</p>';
-    
+
+    // Show the modal
     modal.classList.add('active');
-    
+
     try {
-        const response = await fetch(`data/details/${model}-${mode}-q${qNum}.md`);
-        if (!response.ok) throw new Error('Content not found');
-        
+        console.log('Loading markdown file:', url);
+
+        const response = await fetch(url);
+
+        if (!response.ok) {
+            throw new Error(`Content not found: ${fileName} (status ${response.status})`);
+        }
+
         const markdown = await response.text();
+
+        // Make sure marked is available
+        if (typeof marked === 'undefined') {
+            throw new Error('The "marked" library is not loaded. Check the <script> tag in index.html.');
+        }
+
         content.innerHTML = marked.parse(markdown);
     } catch (error) {
+        console.error('Error loading detail content:', error);
+
         content.innerHTML = `
             <h2>Content Not Available</h2>
-            <p>Detailed analysis has not been added yet.</p>
+            <p>We tried to load: <code>${fileName}</code></p>
+            <p style="color:#737373;font-size:0.9em;margin-top:8px;">
+                ${error.message}
+            </p>
         `;
     }
 }
@@ -219,7 +253,7 @@ function closeModal() {
 // Format model name
 function formatModelName(model) {
     const names = {
-        'chatgpt-5': 'ChatGPT-5',
+        'chatgpt-5-1': 'ChatGPT-5.1',
         'gemini-25': 'Gemini 2.5 Pro',
         'perplexity': 'Perplexity',
         'verizon-ai': 'Verizon AI'
@@ -286,12 +320,13 @@ function syncRowHeights() {
 }
 
 // Show error
-function showError() {
+function showError(errorMessage) {
     const wrapper = document.getElementById('questionsWrapper');
     wrapper.innerHTML = `
         <div style="padding: 60px; text-align: center;">
             <h2 style="color: #f50a23;">Error Loading Data</h2>
             <p>Please refresh the page.</p>
+            ${errorMessage ? `<p style="color: #737373; font-size: 0.9em; margin-top: 10px;">${errorMessage}</p>` : ''}
         </div>
     `;
 }
