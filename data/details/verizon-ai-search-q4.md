@@ -1,5 +1,7 @@
-# Verizon AI – Search – Q4
+# Verizon AI Search - Question 4
 
-- High level insight placeholders for Verizon AI Search responding to Q4.
-- Align key takeaways with the Verizon mobility context.
-- Flag any assumptions that require validation with up-to-date plan details.
+## Question
+I've uploaded my last six Verizon wireless bills as PDF files. Please read them and: (1) create a month-by-month table of total charges per line, including taxes and fees, (2) list any one-time charges, late fees, or add-on subscriptions, and (3) recommend specific changes (plan changes, removing add-ons, discounts like Auto Pay/Paperless) that would lower my overall Verizon bill.
+
+## AI Response
+<!-- Paste the AI response for Search (Question 4) below. -->
