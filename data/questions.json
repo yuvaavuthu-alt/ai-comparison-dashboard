@@ -4,55 +4,50 @@
       "text": "I am using unlimited welcome plan in Verizon and want to switch to unlimited ultimate. Could you please provide all the perks and benefits I will get from this top tier plan?",
       "chatgpt51": {
         "websearch": [
-          "Unlimited premium 5G data",
-          "50GB mobile hotspot",
-          "Disney+ included for 6 months",
-          "Apple Music free for 6 months"
+          "Pulled perks from official Verizon plan pages.",
+          "Included hotspot, roaming and key limits.",
+          "Explained benefits in clear, simple language."
         ],
         "deepresearch": [
-          "Comprehensive plan comparison",
-          "Cost-benefit analysis included",
-          "International roaming details",
-          "Device upgrade eligibility"
+          "Compared Welcome vs Ultimate using Verizon docs.",
+          "Estimated long-term value of added perks.",
+          "Best for a detailed, Verizon-based summary."
         ],
         "agent": [
-          "Automated plan switch assistance",
-          "Best time to upgrade analysis",
-          "Promotional offers available",
-          "Bill impact calculation"
+          "Turned Verizon info into upgrade steps.",
+          "Explained when upgrading actually makes sense.",
+          "Great for action-oriented Verizon guidance."
         ]
       },
       "gemini25": {
         "websearch": [
-          "5G Ultra Wideband access",
-          "Mobile hotspot 50GB",
-          "Streaming service perks",
-          "Priority network access"
+          "Captured main Verizon perks and features.",
+          "Relied mostly on high-level Verizon pages.",
+          "Good quick snapshot, fewer exact numbers."
         ],
         "deepresearch": [
-          "Detailed feature breakdown",
-          "Comparison with competitors",
-          "Long-term cost savings",
-          "Network performance data"
+          "Set Verizon plan in broader market context.",
+          "Compared value to other carrier offerings.",
+          "Better for strategy than fine-print detail."
         ]
       },
       "perplexity": {
         "search": [
-          "Plan pricing details",
-          "Key features listed",
-          "Upgrade process explained"
+          "Pulled exact numbers from Verizon plan pages.",
+          "Heavily cited Verizon sources inline.",
+          "Strong for fast, factual Verizon details."
         ],
         "research": [
-          "Web-sourced comparisons",
-          "Real-time pricing updates"
+          "Focused on live Verizon promos and offers.",
+          "Clarified how promo rules affect pricing.",
+          "Great for current Verizon deal mechanics."
         ]
       },
       "verizonai": {
         "search": [
-          "Official Verizon plan details",
-          "Current promotions",
-          "Upgrade eligibility check",
-          "Customer service contact"
+          "Mirrored Verizon FAQ and support wording.",
+          "Accurate but often very high level.",
+          "Sometimes pointed back to sign-in flows."
         ]
       }
     },
@@ -60,56 +55,50 @@
       "text": "I'm planning to upgrade two of my Verizon lines to new 5G phones. Compare Verizon's current options for buying recent iPhone and Android flagship devices (full price, monthly installments, and promotions with trade-in), and tell me which combination gives the lowest total cost over 36 months for a family of four, assuming two existing phones are eligible for trade-in.",
       "chatgpt51": {
         "websearch": [
-          "Current iPhone flagship pricing",
-          "Android flagship device options",
-          "Trade-in promotion details",
-          "Monthly installment plans"
+          "Used Verizon device pages and promo terms.",
+          "Built a 36-month total cost comparison.",
+          "Surfaced real cost behind \"free\" promos."
         ],
         "deepresearch": [
-          "36-month total cost analysis",
-          "Trade-in value optimization",
-          "Family plan discount calculations",
-          "Best combination scenarios"
+          "Combined upgrades, promos and plan choices.",
+          "Showed how plan tier changes promo value.",
+          "Best for exact Verizon cost optimization."
         ],
         "agent": [
-          "Automated cost comparison tool",
-          "Personalized upgrade recommendations",
-          "Trade-in eligibility assessment",
-          "Optimal purchase strategy"
+          "Turned Verizon pricing into a step-by-step plan.",
+          "Suggested which lines and phones to upgrade.",
+          "Great for a concrete Verizon upgrade playbook."
         ]
       },
       "gemini25": {
         "websearch": [
-          "Latest iPhone models and pricing",
-          "Top Android flagship devices",
-          "Verizon upgrade promotions",
-          "Trade-in program details"
+          "Outlined Verizon purchase and trade-in options.",
+          "Summarized deals with less bill-level math.",
+          "Good overview, lighter on dollar detail."
         ],
         "deepresearch": [
-          "Comprehensive cost comparison",
-          "Long-term financial impact",
-          "Device value depreciation analysis",
-          "Family plan optimization"
+          "Compared Verizon upgrade paths to competitors.",
+          "Used Verizon prices in a broader model.",
+          "More strategic than Verizon-specific."
         ]
       },
       "perplexity": {
         "search": [
-          "Current device pricing",
-          "Trade-in values",
-          "Promotional offers",
-          "Installment plan terms"
+          "Surfaced current Verizon promo and payment terms.",
+          "Linked directly to Verizon device and deal pages.",
+          "Strong at \"what Verizon offers right now.\""
         ],
         "research": [
-          "Live pricing updates",
-          "Real-time promotion tracking"
+          "Explained how credits apply over 36 months.",
+          "Clarified risks of canceling early with Verizon.",
+          "Great on Verizon promo rules and trade-offs."
         ]
       },
       "verizonai": {
         "search": [
-          "Official upgrade calculator",
-          "Device comparison tool",
-          "Trade-in value estimator",
-          "Family plan pricing"
+          "Described Verizon upgrade paths officially.",
+          "Accurate but stayed fairly generic.",
+          "No full 36-month cost breakdown."
         ]
       }
     },
@@ -117,56 +106,50 @@
       "text": "With Thanksgiving and Christmas promotions coming up, what are the best Verizon deals that bundle wireless plans with Verizon Fios Home Internet (where available) or Verizon 5G Home Internet, plus any included perks like streaming services, cloud storage, or device protection? Please focus on offers that maximize total savings for a household with four unlimited lines plus home internet.",
       "chatgpt51": {
         "websearch": [
-          "Holiday bundle promotions",
-          "Fios and wireless bundle deals",
-          "5G Home Internet packages",
-          "Included streaming services"
+          "Pulled bundle info from Verizon Mobile + Home.",
+          "Showed savings for four lines plus home internet.",
+          "Turned Verizon holiday ads into real numbers."
         ],
         "deepresearch": [
-          "Historical holiday promotion patterns",
-          "Bundle savings calculations",
-          "Perk value analysis",
-          "Total household cost optimization"
+          "Combined Fios, 5G Home and myPlan pricing.",
+          "Estimated yearly savings from Verizon bundles.",
+          "Best for \"which bundle saves the most.\""
         ],
         "agent": [
-          "Personalized bundle recommendations",
-          "Savings calculator automation",
-          "Promotion timing analysis",
-          "Best deal identification"
+          "Recommended specific plans, speeds and perks.",
+          "Walked through enrolling in Verizon discounts.",
+          "Great for a practical holiday bundle plan."
         ]
       },
       "gemini25": {
         "websearch": [
-          "Current bundle offerings",
-          "Holiday promotion details",
-          "Fios availability checker",
-          "5G Home coverage areas"
+          "Surfaced Verizon bundle and holiday pages.",
+          "Summarized main discounts and perks.",
+          "Good first pass before deeper analysis."
         ],
         "deepresearch": [
-          "Comprehensive bundle comparison",
-          "Long-term savings projections",
-          "Perk value assessment",
-          "Market competitive analysis"
+          "Compared Verizon bundles to competitors.",
+          "Discussed long-term bundle trade-offs.",
+          "Strong on context, lighter on Verizon math."
         ]
       },
       "perplexity": {
         "search": [
-          "Holiday bundle promotions",
-          "Fios bundle options",
-          "5G Home packages",
-          "Included perks and services"
+          "Precise about Verizon Mobile + Home discounts.",
+          "Cited Fios and 5G Home promo pages.",
+          "Great for exact current Verizon bundle terms."
         ],
         "research": [
-          "Live promotion tracking",
-          "Real-time deal updates"
+          "Highlighted which bundles maximize discounts.",
+          "Explained stacking rules across Verizon offers.",
+          "Best for promo-driven Verizon bundle strategy."
         ]
       },
       "verizonai": {
         "search": [
-          "Official bundle calculator",
-          "Current promotions",
-          "Fios availability tool",
-          "5G Home coverage map"
+          "Quoted Verizon explanations of bundle savings.",
+          "Accurate on core Mobile + Home details.",
+          "Good official reference, not full optimization."
         ]
       }
     },
@@ -174,56 +157,50 @@
       "text": "I've uploaded my last six Verizon wireless bills as PDF files. Please read them and: (1) create a month-by-month table of total charges per line, including taxes and fees, (2) list any one-time charges, late fees, or add-on subscriptions, and (3) recommend specific changes (plan changes, removing add-ons, discounts like Auto Pay/Paperless) that would lower my overall Verizon bill.",
       "chatgpt51": {
         "websearch": [
-          "PDF bill parsing capabilities",
-          "Auto Pay discount information",
-          "Paperless billing savings",
-          "Common add-on subscription costs"
+          "Parsed Verizon PDFs and line-by-line totals.",
+          "Built month-by-month charges per line.",
+          "Mixed Verizon billing rules with real data."
         ],
         "deepresearch": [
-          "Historical bill trend analysis",
-          "Cost optimization strategies",
-          "Plan comparison with current usage",
-          "Industry benchmark comparisons"
+          "Did a full Verizon bill audit over six months.",
+          "Flagged one-time fees and recurring add-ons.",
+          "Proposed concrete Verizon plan and line changes."
         ],
         "agent": [
-          "Automated PDF extraction and analysis",
-          "Personalized savings recommendations",
-          "Bill breakdown automation",
-          "Cost reduction action plan"
+          "Turned bill findings into an action checklist.",
+          "Showed which Verizon add-ons to remove.",
+          "Great for a guided Verizon bill cleanup."
         ]
       },
       "gemini25": {
         "websearch": [
-          "Verizon bill structure explained",
-          "Available discount programs",
-          "Add-on removal options",
-          "Plan optimization tools"
+          "Explained Verizon charges using support articles.",
+          "Good for understanding typical line items.",
+          "Less focused on exact PDFs than ChatGPT."
         ],
         "deepresearch": [
-          "Multi-month bill pattern analysis",
-          "Cost-saving opportunity identification",
-          "Competitive plan comparisons",
-          "Long-term savings projections"
+          "Reviewed bills and known Verizon plan prices.",
+          "Flagged wasteful add-ons and late fees.",
+          "Helpful second view on Verizon savings."
         ]
       },
       "perplexity": {
         "search": [
-          "Verizon bill analysis tools",
-          "Discount eligibility requirements",
-          "Add-on subscription costs",
-          "Plan change options"
+          "Pulled Verizon FAQs on taxes and fees.",
+          "Explained which charges are optional.",
+          "Great reference for bill line meanings."
         ],
         "research": [
-          "Real-time plan pricing",
-          "Current promotion tracking"
+          "Mapped bill patterns to Verizon plan options.",
+          "Showed impact of moving lines between plans.",
+          "Focused on Verizon billing rules and outcomes."
         ]
       },
       "verizonai": {
         "search": [
-          "Official bill analysis tools",
-          "Account optimization recommendations",
-          "Available discounts and promotions",
-          "Customer service contact options"
+          "Returned generic Verizon billing explanations.",
+          "Accurate but not line-by-line on PDFs.",
+          "Best as official Verizon bill reference."
         ]
       }
     }
