@@ -291,29 +291,23 @@ function syncRowHeights() {
     // Force a reflow to ensure accurate measurements
     void document.body.offsetHeight;
     
-    // Sync each row
     rightRows.forEach((rightRow, index) => {
         const leftHeader = leftHeaders[index];
         if (leftHeader && rightRow) {
-            // Reset heights first to get natural height
+            // Reset heights to get natural size
             leftHeader.style.height = 'auto';
-            rightRow.style.minHeight = 'auto';
+            leftHeader.style.minHeight = '';
+            rightRow.style.height = 'auto';
+            rightRow.style.minHeight = '';
             
-            // Force reflow
-            void leftHeader.offsetHeight;
-            void rightRow.offsetHeight;
-            
-            // Get the actual rendered height
+            // Re-measure
             const rightHeight = rightRow.getBoundingClientRect().height;
             const leftHeight = leftHeader.getBoundingClientRect().height;
             
-            // Use the larger height to ensure both align
-            const targetHeight = Math.max(rightHeight, leftHeight, 200); // Minimum 200px
-            
-            // Apply the height
+            // Match the taller of the two (no hard 200px minimum)
+            const targetHeight = Math.max(rightHeight, leftHeight);
             leftHeader.style.height = `${targetHeight}px`;
-            leftHeader.style.minHeight = `${targetHeight}px`;
-            rightRow.style.minHeight = `${targetHeight}px`;
+            rightRow.style.height = `${targetHeight}px`;
         }
     });
 }

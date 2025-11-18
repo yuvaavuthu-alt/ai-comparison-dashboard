@@ -172,7 +172,7 @@ body {
 }
 
 .model-row-header {
-  min-height: 200px;
+  /* let the row height be driven by content */
   padding: 24px 24px;
   border-bottom: 2px solid var(--vz-gray-200);
   display: flex;
@@ -309,17 +309,17 @@ body {
 
 /* ==================== RESULT CELLS ==================== */
 .result-row {
-  min-height: 200px;
+  /* let content control height instead of forcing 200px */
   padding: 24px 16px;
   border-bottom: 2px solid var(--vz-gray-200);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;   /* top-align cards */
   background: var(--vz-white);
   transition: all 0.3s ease;
   position: relative;
-  overflow-x: auto;
-  overflow-y: hidden;
+  overflow-x: hidden;
+  overflow-y: visible;
   box-sizing: border-box;
 }
 
@@ -334,21 +334,14 @@ body {
   transition: width 0.3s ease;
 }
 
+/* Layout for the tiles inside each row */
 .result-modes {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 16px;
-  min-width: min-content;
 }
 
-.chatgpt-result .result-modes { min-width: 900px; }
-.gemini-result .result-modes { min-width: 600px; }
-.perplexity-result .result-modes { min-width: 600px; }
-.verizon-result .result-modes { min-width: 300px; }
-
-.chatgpt-result .mode-result { flex: 0 0 280px; }
-.gemini-result .mode-result { flex: 0 0 280px; }
-.perplexity-result .mode-result { flex: 0 0 280px; }
-.verizon-result .mode-result { flex: 0 0 280px; }
+/* No per-model min-widths or fixed tile widths anymore */
 
 .mode-result {
   background: var(--vz-gray-50);
@@ -555,13 +548,6 @@ body {
       grid-template-columns: 280px 1fr;
   }
   
-  .mode-result {
-      flex: 0 0 260px;
-  }
-  
-  .chatgpt-result .result-modes { min-width: 820px; }
-  .gemini-result .result-modes { min-width: 540px; }
-  .perplexity-result .result-modes { min-width: 540px; }
 }
 
 @media (max-width: 1400px) {
@@ -581,13 +567,6 @@ body {
       font-size: 1.2em;
   }
   
-  .mode-result {
-      flex: 0 0 240px;
-  }
-  
-  .chatgpt-result .result-modes { min-width: 750px; }
-  .gemini-result .result-modes { min-width: 500px; }
-  .perplexity-result .result-modes { min-width: 500px; }
 }
 
 @media (max-width: 1200px) {
@@ -611,13 +590,6 @@ body {
       font-size: 1.1em;
   }
   
-  .mode-result {
-      flex: 0 0 220px;
-  }
-  
-  .chatgpt-result .result-modes { min-width: 690px; }
-  .gemini-result .result-modes { min-width: 460px; }
-  .perplexity-result .result-modes { min-width: 460px; }
 }
 
 @media (max-width: 1024px) {
@@ -658,10 +630,6 @@ body {
       font-size: 0.8em;
   }
   
-  .chatgpt-result .result-modes { min-width: 630px; }
-  .gemini-result .result-modes { min-width: 420px; }
-  .perplexity-result .result-modes { min-width: 420px; }
-  .verizon-result .result-modes { min-width: 200px; }
   
   .question-tab {
       padding: 6px 16px;
@@ -713,7 +681,6 @@ body {
   
   .model-row-header {
       padding: 20px 12px;
-      min-height: 160px;
   }
   
   .model-info h3 {
@@ -727,7 +694,6 @@ body {
   
   .result-row {
       padding: 20px 12px;
-      min-height: 160px;
   }
   
   .mode-result {
@@ -756,10 +722,6 @@ body {
       margin-top: 8px;
   }
   
-  .chatgpt-result .result-modes { min-width: 570px; }
-  .gemini-result .result-modes { min-width: 380px; }
-  .perplexity-result .result-modes { min-width: 380px; }
-  .verizon-result .result-modes { min-width: 180px; }
   
   .question-header {
       min-height: 100px;
