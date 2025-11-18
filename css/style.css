@@ -342,7 +342,7 @@ body {
 
 .chatgpt-result .result-modes { min-width: 900px; }
 .gemini-result .result-modes { min-width: 600px; }
-.perplexity-result .result-modes { min-width: 1500px; }
+.perplexity-result .result-modes { min-width: 600px; }
 .verizon-result .result-modes { min-width: 300px; }
 
 .chatgpt-result .mode-result { flex: 0 0 280px; }
@@ -561,7 +561,7 @@ body {
   
   .chatgpt-result .result-modes { min-width: 820px; }
   .gemini-result .result-modes { min-width: 540px; }
-  .perplexity-result .result-modes { min-width: 1350px; }
+  .perplexity-result .result-modes { min-width: 540px; }
 }
 
 @media (max-width: 1400px) {
@@ -587,7 +587,7 @@ body {
   
   .chatgpt-result .result-modes { min-width: 750px; }
   .gemini-result .result-modes { min-width: 500px; }
-  .perplexity-result .result-modes { min-width: 1250px; }
+  .perplexity-result .result-modes { min-width: 500px; }
 }
 
 @media (max-width: 1200px) {
@@ -617,7 +617,7 @@ body {
   
   .chatgpt-result .result-modes { min-width: 690px; }
   .gemini-result .result-modes { min-width: 460px; }
-  .perplexity-result .result-modes { min-width: 1150px; }
+  .perplexity-result .result-modes { min-width: 460px; }
 }
 
 @media (max-width: 1024px) {
@@ -660,7 +660,7 @@ body {
   
   .chatgpt-result .result-modes { min-width: 630px; }
   .gemini-result .result-modes { min-width: 420px; }
-  .perplexity-result .result-modes { min-width: 1050px; }
+  .perplexity-result .result-modes { min-width: 420px; }
   .verizon-result .result-modes { min-width: 200px; }
   
   .question-tab {
@@ -758,7 +758,7 @@ body {
   
   .chatgpt-result .result-modes { min-width: 570px; }
   .gemini-result .result-modes { min-width: 380px; }
-  .perplexity-result .result-modes { min-width: 950px; }
+  .perplexity-result .result-modes { min-width: 380px; }
   .verizon-result .result-modes { min-width: 180px; }
   
   .question-header {

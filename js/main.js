@@ -115,7 +115,7 @@ function createQuestionColumn(question, qNum) {
     // Perplexity row
     column.appendChild(createResultRow('perplexity-result', [
         { mode: 'Search', insights: question.perplexity.search, slug: 'search' },
-        { mode: 'Comet Browser', insights: question.perplexity.cometbrowser, slug: 'cometbrowser' }
+        { mode: 'Research', insights: question.perplexity.research, slug: 'research' }
     ], 'perplexity', qNum));
     
     // Verizon AI row
@@ -255,7 +255,7 @@ function formatModelName(model) {
     const names = {
         'chatgpt-5-1': 'ChatGPT-5.1',
         'gemini-25': 'Gemini 2.5 Pro',
-        'perplexity': 'Perplexity',
+        'perplexity': 'Perplexity Comet',
         'verizon-ai': 'Verizon AI'
     };
     return names[model] || model;
@@ -270,8 +270,7 @@ function formatModeName(mode) {
         'search': 'Search',
         'research': 'Research',
         'labs': 'Labs',
-        'learn': 'Learn',
-        'cometbrowser': 'Comet Browser'
+        'learn': 'Learn'
     };
     return modes[mode] || mode;
 }
