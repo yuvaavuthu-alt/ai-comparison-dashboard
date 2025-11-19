@@ -1,17 +1,29 @@
 let currentQuestionIndex = 0;
 let questionsData = [];
+let geoData = {};
 
 // Load data on page load
 document.addEventListener('DOMContentLoaded', async () => {
     try {
+        // Load questions
         const response = await fetch('./data/questions.json?v=' + Date.now());
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status} - ${response.statusText}`);
         }
         const jsonText = await response.text();
-        console.log('JSON received, length:', jsonText.length);
         questionsData = JSON.parse(jsonText);
         
+        // Load GEO analysis
+        try {
+            const geoResponse = await fetch('./data/geo_analysis.json?v=' + Date.now());
+            if (geoResponse.ok) {
+                geoData = await geoResponse.json();
+                console.log('GEO Analysis loaded');
+            }
+        } catch (e) {
+            console.warn('Failed to load GEO analysis:', e);
+        }
+
         // Validate data structure
         if (!questionsData || !questionsData.questions || !Array.isArray(questionsData.questions)) {
             throw new Error('Invalid data structure - missing questions array');
@@ -232,6 +244,12 @@ async function openModal(model, mode, qNum) {
         }
 
         content.innerHTML = marked.parse(markdown);
+        
+        // Inject GEO Scorecard if available
+        if (geoData && geoData[fileName]) {
+            const scorecardHtml = renderGeoScorecard(geoData[fileName]);
+            content.insertAdjacentHTML('afterbegin', scorecardHtml);
+        }
     } catch (error) {
         console.error('Error loading detail content:', error);
 
@@ -359,3 +377,69 @@ const observer = new MutationObserver(() => {
         syncRowHeights();
     });
 });
+// Render GEO Scorecard
+function renderGeoScorecard(data) {
+    const score = data.geo_score;
+    let scoreColor = '#f50a23'; // Red
+    if (score >= 70) scoreColor = '#00ac3e'; // Green
+    else if (score >= 40) scoreColor = '#ffbc11'; // Yellow
+
+    // Use effective counts (includes implicit structure)
+    const headers = data.structure.effective_headers || data.structure.headers;
+    const bullets = data.structure.effective_bullets || data.structure.bullet_points;
+    
+    // Formatting warnings
+    let warningHtml = '';
+    if (data.formatting_issues && data.formatting_issues.length > 0) {
+        warningHtml = `
+            <div class="geo-warning" style="margin-top: 12px; padding: 12px; background: #fff8e6; border-left: 4px solid #ffbc11; border-radius: 4px; font-size: 0.85em; color: #854d0e;">
+                <strong>Potential Formatting Issues:</strong> ${data.formatting_issues.join(', ')}. 
+                <br><em>The score has been adjusted to account for implicit structure, but explicit markdown is recommended.</em>
+            </div>
+        `;
+    }
+
+    return `
+        <div class="geo-scorecard">
+            <div class="geo-header">
+                <h3>Generative Engine Optimization (GEO) Analysis</h3>
+                <span class="geo-badge">BETA</span>
+            </div>
+            <div class="geo-metrics">
+                <div class="geo-metric-main tooltip-container" style="border-color: ${scoreColor}">
+                    <div class="geo-score" style="color: ${scoreColor}">${score}</div>
+                    <div class="geo-label">GEO Score</div>
+                    <div class="tooltip-text">A 0-100 score measuring how well-optimized this content is for Generative Engines. Based on structure, keyword density, and formatting.</div>
+                </div>
+                <div class="geo-metric-grid">
+                    <div class="geo-metric-item tooltip-container">
+                        <span class="metric-value">${data.word_count}</span>
+                        <span class="metric-label">Words</span>
+                        <div class="tooltip-text">Total word count. Longer content isn't always better, but very short answers may lack detail.</div>
+                    </div>
+                    <div class="geo-metric-item tooltip-container">
+                        <span class="metric-value">${data.readability.avg_sentence_length}</span>
+                        <span class="metric-label">Avg. Sentence Len</span>
+                        <div class="tooltip-text">Average words per sentence. Lower numbers (10-15) usually mean better readability and clarity for AI.</div>
+                    </div>
+                    <div class="geo-metric-item tooltip-container">
+                        <span class="metric-value">${headers}</span>
+                        <span class="metric-label">Headers</span>
+                        <div class="tooltip-text">Number of section headers. Headers help AI understand the structure and hierarchy of the information.</div>
+                    </div>
+                    <div class="geo-metric-item tooltip-container">
+                        <span class="metric-value">${Object.values(data.keywords).reduce((a, b) => a + b, 0)}</span>
+                        <span class="metric-label">Key Terms</span>
+                        <div class="tooltip-text">Frequency of relevant keywords (e.g., "Verizon", "5G"). Higher density helps AI match the content to user queries.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="geo-explanation">
+                <p><strong>Why this matters:</strong> Higher GEO scores indicate content that is better structured for AI retrieval and synthesis. 
+                This response uses <strong>${bullets}</strong> list items (explicit or implicit) and <strong>${data.structure.bold_phrases}</strong> bold phrases for emphasis.</p>
+                ${warningHtml}
+            </div>
+        </div>
+    `;
+}
+

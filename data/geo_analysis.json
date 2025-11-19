@@ -1,0 +1,971 @@
+{
+  "perplexity-search-q4.md": {
+    "word_count": 758,
+    "structure": {
+      "headers": 0,
+      "effective_headers": 0,
+      "bullet_points": 18,
+      "effective_bullets": 24,
+      "bold_phrases": 17
+    },
+    "keywords": {
+      "Verizon": 5,
+      "Unlimited": 4,
+      "5G": 0,
+      "Plan": 7,
+      "Fios": 0,
+      "Welcome": 2,
+      "Ultimate": 0,
+      "Plus": 2,
+      "Play": 0,
+      "Do More": 0,
+      "Get More": 0
+    },
+    "readability": {
+      "avg_sentence_length": 6.6,
+      "sentence_count": 115
+    },
+    "geo_score": 55,
+    "formatting_issues": []
+  },
+  "chatgpt-5-1-agent-q4.md": {
+    "word_count": 1492,
+    "structure": {
+      "headers": 14,
+      "effective_headers": 14,
+      "bullet_points": 3,
+      "effective_bullets": 20,
+      "bold_phrases": 1
+    },
+    "keywords": {
+      "Verizon": 10,
+      "Unlimited": 16,
+      "5G": 6,
+      "Plan": 5,
+      "Fios": 0,
+      "Welcome": 7,
+      "Ultimate": 0,
+      "Plus": 9,
+      "Play": 0,
+      "Do More": 0,
+      "Get More": 0
+    },
+    "readability": {
+      "avg_sentence_length": 11.0,
+      "sentence_count": 136
+    },
+    "geo_score": 63,
+    "formatting_issues": []
+  },
+  "perplexity-research-q2.md": {
+    "word_count": 497,
+    "structure": {
+      "headers": 4,
+      "effective_headers": 4,
+      "bullet_points": 15,
+      "effective_bullets": 28,
+      "bold_phrases": 11
+    },
+    "keywords": {
+      "Verizon": 25,
+      "Unlimited": 6,
+      "5G": 1,
+      "Plan": 8,
+      "Fios": 0,
+      "Welcome": 0,
+      "Ultimate": 6,
+      "Plus": 1,
+      "Play": 0,
+      "Do More": 0,
+      "Get More": 0
+    },
+    "readability": {
+      "avg_sentence_length": 5.6,
+      "sentence_count": 89
+    },
+    "geo_score": 96,
+    "formatting_issues": []
+  },
+  "perplexity-search-q1.md": {
+    "word_count": 453,
+    "structure": {
+      "headers": 2,
+      "effective_headers": 2,
+      "bullet_points": 10,
+      "effective_bullets": 21,
+      "bold_phrases": 0
+    },
+    "keywords": {
+      "Verizon": 17,
+      "Unlimited": 23,
+      "5G": 3,
+      "Plan": 8,
+      "Fios": 0,
+      "Welcome": 4,
+      "Ultimate": 10,
+      "Plus": 2,
+      "Play": 0,
+      "Do More": 0,
+      "Get More": 0
+    },
+    "readability": {
+      "avg_sentence_length": 8.4,
+      "sentence_count": 54
+    },
+    "geo_score": 68,
+    "formatting_issues": [
+      "No Bold Text"
+    ]
+  },
+  "perplexity-research-q3.md": {
+    "word_count": 1163,
+    "structure": {
+      "headers": 8,
+      "effective_headers": 8,
+      "bullet_points": 50,
+      "effective_bullets": 75,
+      "bold_phrases": 55
+    },
+    "keywords": {
+      "Verizon": 35,
+      "Unlimited": 17,
+      "5G": 17,
+      "Plan": 4,
+      "Fios": 20,
+      "Welcome": 3,
+      "Ultimate": 6,
+      "Plus": 11,
+      "Play": 1,
+      "Do More": 0,
+      "Get More": 0
+    },
+    "readability": {
+      "avg_sentence_length": 10.9,
+      "sentence_count": 107
+    },
+    "geo_score": 100,
+    "formatting_issues": []
+  },
+  "chatgpt-5-1-agent-q1.md": {
+    "word_count": 763,
+    "structure": {
+      "headers": 7,
+      "effective_headers": 7,
+      "bullet_points": 15,
+      "effective_bullets": 15,
+      "bold_phrases": 15
+    },
+    "keywords": {
+      "Verizon": 14,
+      "Unlimited": 24,
+      "5G": 6,
+      "Plan": 16,
+      "Fios": 0,
+      "Welcome": 3,
+      "Ultimate": 9,
+      "Plus": 2,
+      "Play": 0,
+      "Do More": 0,
+      "Get More": 0
+    },
+    "readability": {
+      "avg_sentence_length": 14.4,
+      "sentence_count": 53
+    },
+    "geo_score": 100,
+    "formatting_issues": []
+  },
+  "chatgpt-5-1-websearch-q1.md": {
+    "word_count": 1382,
+    "structure": {
+      "headers": 12,
+      "effective_headers": 12,
+      "bullet_points": 53,
+      "effective_bullets": 83,
+      "bold_phrases": 80
+    },
+    "keywords": {
+      "Verizon": 13,
+      "Unlimited": 36,
+      "5G": 14,
+      "Plan": 8,
+      "Fios": 1,
+      "Welcome": 11,
+      "Ultimate": 33,
+      "Plus": 4,
+      "Play": 1,
+      "Do More": 0,
+      "Get More": 0
+    },
+    "readability": {
+      "avg_sentence_length": 22.7,
+      "sentence_count": 61
+    },
+    "geo_score": 100,
+    "formatting_issues": []
+  },
+  "gemini-25-websearch-q4.md": {
+    "word_count": 887,
+    "structure": {
+      "headers": 12,
+      "effective_headers": 12,
+      "bullet_points": 19,
+      "effective_bullets": 41,
+      "bold_phrases": 29
+    },
+    "keywords": {
+      "Verizon": 1,
+      "Unlimited": 7,
+      "5G": 0,
+      "Plan": 2,
+      "Fios": 0,
+      "Welcome": 3,
+      "Ultimate": 0,
+      "Plus": 4,
+      "Play": 0,
+      "Do More": 0,
+      "Get More": 0
+    },
+    "readability": {
+      "avg_sentence_length": 7.9,
+      "sentence_count": 112
+    },
+    "geo_score": 71,
+    "formatting_issues": []
+  },
+  "gemini-25-deepresearch-q4.md": {
+    "word_count": 2593,
+    "structure": {
+      "headers": 18,
+      "effective_headers": 18,
+      "bullet_points": 49,
+      "effective_bullets": 97,
+      "bold_phrases": 104
+    },
+    "keywords": {
+      "Verizon": 4,
+      "Unlimited": 9,
+      "5G": 2,
+      "Plan": 13,
+      "Fios": 0,
+      "Welcome": 5,
+      "Ultimate": 0,
+      "Plus": 6,
+      "Play": 0,
+      "Do More": 0,
+      "Get More": 0
+    },
+    "readability": {
+      "avg_sentence_length": 10.2,
+      "sentence_count": 253
+    },
+    "geo_score": 69,
+    "formatting_issues": []
+  },
+  "verizon-ai-search-q3.md": {
+    "word_count": 183,
+    "structure": {
+      "headers": 0,
+      "effective_headers": 0,
+      "bullet_points": 0,
+      "effective_bullets": 0,
+      "bold_phrases": 0
+    },
+    "keywords": {
+      "Verizon": 5,
+      "Unlimited": 0,
+      "5G": 2,
+      "Plan": 1,
+      "Fios": 4,
+      "Welcome": 0,
+      "Ultimate": 1,
+      "Plus": 1,
+      "Play": 0,
+      "Do More": 0,
+      "Get More": 0
+    },
+    "readability": {
+      "avg_sentence_length": 20.3,
+      "sentence_count": 9
+    },
+    "geo_score": 40,
+    "formatting_issues": [
+      "No Bold Text"
+    ]
+  },
+  "chatgpt-5-1-deepresearch-q3.md": {
+    "word_count": 2099,
+    "structure": {
+      "headers": 6,
+      "effective_headers": 6,
+      "bullet_points": 0,
+      "effective_bullets": 3,
+      "bold_phrases": 2
+    },
+    "keywords": {
+      "Verizon": 73,
+      "Unlimited": 22,
+      "5G": 20,
+      "Plan": 22,
+      "Fios": 23,
+      "Welcome": 5,
+      "Ultimate": 11,
+      "Plus": 2,
+      "Play": 2,
+      "Do More": 0,
+      "Get More": 0
+    },
+    "readability": {
+      "avg_sentence_length": 21.4,
+      "sentence_count": 98
+    },
+    "geo_score": 67,
+    "formatting_issues": [
+      "Implicit Lists"
+    ]
+  },
+  "verizon-ai-search-q2.md": {
+    "word_count": 122,
+    "structure": {
+      "headers": 0,
+      "effective_headers": 1,
+      "bullet_points": 0,
+      "effective_bullets": 3,
+      "bold_phrases": 0
+    },
+    "keywords": {
+      "Verizon": 2,
+      "Unlimited": 2,
+      "5G": 1,
+      "Plan": 1,
+      "Fios": 0,
+      "Welcome": 1,
+      "Ultimate": 0,
+      "Plus": 1,
+      "Play": 0,
+      "Do More": 0,
+      "Get More": 0
+    },
+    "readability": {
+      "avg_sentence_length": 13.6,
+      "sentence_count": 9
+    },
+    "geo_score": 44,
+    "formatting_issues": [
+      "Implicit Headers",
+      "Implicit Lists",
+      "No Bold Text"
+    ]
+  },
+  "chatgpt-5-1-websearch-q4.md": {
+    "word_count": 1009,
+    "structure": {
+      "headers": 20,
+      "effective_headers": 20,
+      "bullet_points": 30,
+      "effective_bullets": 70,
+      "bold_phrases": 57
+    },
+    "keywords": {
+      "Verizon": 4,
+      "Unlimited": 8,
+      "5G": 0,
+      "Plan": 5,
+      "Fios": 0,
+      "Welcome": 4,
+      "Ultimate": 0,
+      "Plus": 7,
+      "Play": 0,
+      "Do More": 0,
+      "Get More": 0
+    },
+    "readability": {
+      "avg_sentence_length": 10.6,
+      "sentence_count": 95
+    },
+    "geo_score": 76,
+    "formatting_issues": []
+  },
+  "chatgpt-5-1-deepresearch-q2.md": {
+    "word_count": 2435,
+    "structure": {
+      "headers": 0,
+      "effective_headers": 4,
+      "bullet_points": 0,
+      "effective_bullets": 15,
+      "bold_phrases": 0
+    },
+    "keywords": {
+      "Verizon": 25,
+      "Unlimited": 38,
+      "5G": 7,
+      "Plan": 42,
+      "Fios": 0,
+      "Welcome": 34,
+      "Ultimate": 32,
+      "Plus": 30,
+      "Play": 0,
+      "Do More": 0,
+      "Get More": 0
+    },
+    "readability": {
+      "avg_sentence_length": 18.2,
+      "sentence_count": 134
+    },
+    "geo_score": 68,
+    "formatting_issues": [
+      "Implicit Headers",
+      "Implicit Lists",
+      "No Bold Text"
+    ]
+  },
+  "gemini-25-deepresearch-q1.md": {
+    "word_count": 2910,
+    "structure": {
+      "headers": 0,
+      "effective_headers": 39,
+      "bullet_points": 0,
+      "effective_bullets": 103,
+      "bold_phrases": 0
+    },
+    "keywords": {
+      "Verizon": 53,
+      "Unlimited": 65,
+      "5G": 15,
+      "Plan": 58,
+      "Fios": 0,
+      "Welcome": 33,
+      "Ultimate": 37,
+      "Plus": 1,
+      "Play": 0,
+      "Do More": 0,
+      "Get More": 0
+    },
+    "readability": {
+      "avg_sentence_length": 12.6,
+      "sentence_count": 231
+    },
+    "geo_score": 80,
+    "formatting_issues": [
+      "Implicit Headers",
+      "Implicit Lists",
+      "No Bold Text"
+    ]
+  },
+  "gemini-25-websearch-q1.md": {
+    "word_count": 515,
+    "structure": {
+      "headers": 2,
+      "effective_headers": 2,
+      "bullet_points": 5,
+      "effective_bullets": 22,
+      "bold_phrases": 34
+    },
+    "keywords": {
+      "Verizon": 3,
+      "Unlimited": 9,
+      "5G": 9,
+      "Plan": 8,
+      "Fios": 0,
+      "Welcome": 4,
+      "Ultimate": 4,
+      "Plus": 0,
+      "Play": 0,
+      "Do More": 0,
+      "Get More": 0
+    },
+    "readability": {
+      "avg_sentence_length": 16.6,
+      "sentence_count": 31
+    },
+    "geo_score": 88,
+    "formatting_issues": []
+  },
+  "verizon-ai-search-q1.md": {
+    "word_count": 216,
+    "structure": {
+      "headers": 0,
+      "effective_headers": 6,
+      "bullet_points": 0,
+      "effective_bullets": 9,
+      "bold_phrases": 0
+    },
+    "keywords": {
+      "Verizon": 2,
+      "Unlimited": 10,
+      "5G": 4,
+      "Plan": 4,
+      "Fios": 0,
+      "Welcome": 1,
+      "Ultimate": 4,
+      "Plus": 1,
+      "Play": 0,
+      "Do More": 0,
+      "Get More": 1
+    },
+    "readability": {
+      "avg_sentence_length": 14.4,
+      "sentence_count": 15
+    },
+    "geo_score": 61,
+    "formatting_issues": [
+      "Implicit Headers",
+      "Implicit Lists",
+      "No Bold Text"
+    ]
+  },
+  "chatgpt-5-1-deepresearch-q1.md": {
+    "word_count": 5766,
+    "structure": {
+      "headers": 0,
+      "effective_headers": 11,
+      "bullet_points": 0,
+      "effective_bullets": 30,
+      "bold_phrases": 0
+    },
+    "keywords": {
+      "Verizon": 74,
+      "Unlimited": 155,
+      "5G": 42,
+      "Plan": 74,
+      "Fios": 2,
+      "Welcome": 95,
+      "Ultimate": 106,
+      "Plus": 16,
+      "Play": 1,
+      "Do More": 0,
+      "Get More": 1
+    },
+    "readability": {
+      "avg_sentence_length": 17.5,
+      "sentence_count": 329
+    },
+    "geo_score": 80,
+    "formatting_issues": [
+      "Implicit Headers",
+      "Implicit Lists",
+      "No Bold Text"
+    ]
+  },
+  "gemini-25-deepresearch-q2.md": {
+    "word_count": 3923,
+    "structure": {
+      "headers": 0,
+      "effective_headers": 124,
+      "bullet_points": 0,
+      "effective_bullets": 177,
+      "bold_phrases": 0
+    },
+    "keywords": {
+      "Verizon": 75,
+      "Unlimited": 33,
+      "5G": 2,
+      "Plan": 60,
+      "Fios": 0,
+      "Welcome": 30,
+      "Ultimate": 15,
+      "Plus": 19,
+      "Play": 0,
+      "Do More": 0,
+      "Get More": 0
+    },
+    "readability": {
+      "avg_sentence_length": 12.9,
+      "sentence_count": 305
+    },
+    "geo_score": 75,
+    "formatting_issues": [
+      "Implicit Headers",
+      "Implicit Lists",
+      "No Bold Text"
+    ]
+  },
+  "gemini-25-websearch-q2.md": {
+    "word_count": 664,
+    "structure": {
+      "headers": 3,
+      "effective_headers": 3,
+      "bullet_points": 14,
+      "effective_bullets": 27,
+      "bold_phrases": 36
+    },
+    "keywords": {
+      "Verizon": 8,
+      "Unlimited": 7,
+      "5G": 0,
+      "Plan": 7,
+      "Fios": 0,
+      "Welcome": 1,
+      "Ultimate": 1,
+      "Plus": 4,
+      "Play": 0,
+      "Do More": 0,
+      "Get More": 0
+    },
+    "readability": {
+      "avg_sentence_length": 11.4,
+      "sentence_count": 58
+    },
+    "geo_score": 79,
+    "formatting_issues": []
+  },
+  "chatgpt-5-1-websearch-q3.md": {
+    "word_count": 1453,
+    "structure": {
+      "headers": 12,
+      "effective_headers": 12,
+      "bullet_points": 39,
+      "effective_bullets": 70,
+      "bold_phrases": 23
+    },
+    "keywords": {
+      "Verizon": 39,
+      "Unlimited": 18,
+      "5G": 9,
+      "Plan": 10,
+      "Fios": 22,
+      "Welcome": 3,
+      "Ultimate": 1,
+      "Plus": 3,
+      "Play": 0,
+      "Do More": 0,
+      "Get More": 0
+    },
+    "readability": {
+      "avg_sentence_length": 12.5,
+      "sentence_count": 116
+    },
+    "geo_score": 100,
+    "formatting_issues": []
+  },
+  "verizon-ai-search-q4.md": {
+    "word_count": 70,
+    "structure": {
+      "headers": 0,
+      "effective_headers": 1,
+      "bullet_points": 0,
+      "effective_bullets": 0,
+      "bold_phrases": 0
+    },
+    "keywords": {
+      "Verizon": 3,
+      "Unlimited": 0,
+      "5G": 0,
+      "Plan": 1,
+      "Fios": 0,
+      "Welcome": 0,
+      "Ultimate": 0,
+      "Plus": 0,
+      "Play": 0,
+      "Do More": 0,
+      "Get More": 0
+    },
+    "readability": {
+      "avg_sentence_length": 17.5,
+      "sentence_count": 4
+    },
+    "geo_score": 36,
+    "formatting_issues": [
+      "Implicit Headers",
+      "No Bold Text"
+    ]
+  },
+  "chatgpt-5-1-websearch-q2.md": {
+    "word_count": 2348,
+    "structure": {
+      "headers": 0,
+      "effective_headers": 17,
+      "bullet_points": 0,
+      "effective_bullets": 158,
+      "bold_phrases": 0
+    },
+    "keywords": {
+      "Verizon": 13,
+      "Unlimited": 44,
+      "5G": 4,
+      "Plan": 29,
+      "Fios": 0,
+      "Welcome": 29,
+      "Ultimate": 32,
+      "Plus": 27,
+      "Play": 0,
+      "Do More": 0,
+      "Get More": 0
+    },
+    "readability": {
+      "avg_sentence_length": 15.9,
+      "sentence_count": 148
+    },
+    "geo_score": 80,
+    "formatting_issues": [
+      "Implicit Headers",
+      "Implicit Lists",
+      "No Bold Text"
+    ]
+  },
+  "chatgpt-5-1-deepresearch-q4.md": {
+    "word_count": 1692,
+    "structure": {
+      "headers": 8,
+      "effective_headers": 8,
+      "bullet_points": 12,
+      "effective_bullets": 19,
+      "bold_phrases": 14
+    },
+    "keywords": {
+      "Verizon": 8,
+      "Unlimited": 12,
+      "5G": 3,
+      "Plan": 26,
+      "Fios": 0,
+      "Welcome": 8,
+      "Ultimate": 0,
+      "Plus": 7,
+      "Play": 0,
+      "Do More": 0,
+      "Get More": 0
+    },
+    "readability": {
+      "avg_sentence_length": 8.8,
+      "sentence_count": 192
+    },
+    "geo_score": 82,
+    "formatting_issues": []
+  },
+  "gemini-25-deepresearch-q3.md": {
+    "word_count": 3777,
+    "structure": {
+      "headers": 29,
+      "effective_headers": 29,
+      "bullet_points": 63,
+      "effective_bullets": 151,
+      "bold_phrases": 144
+    },
+    "keywords": {
+      "Verizon": 76,
+      "Unlimited": 29,
+      "5G": 36,
+      "Plan": 58,
+      "Fios": 26,
+      "Welcome": 13,
+      "Ultimate": 24,
+      "Plus": 10,
+      "Play": 0,
+      "Do More": 0,
+      "Get More": 0
+    },
+    "readability": {
+      "avg_sentence_length": 14.3,
+      "sentence_count": 265
+    },
+    "geo_score": 100,
+    "formatting_issues": []
+  },
+  "gemini-25-websearch-q3.md": {
+    "word_count": 667,
+    "structure": {
+      "headers": 3,
+      "effective_headers": 3,
+      "bullet_points": 20,
+      "effective_bullets": 25,
+      "bold_phrases": 38
+    },
+    "keywords": {
+      "Verizon": 6,
+      "Unlimited": 8,
+      "5G": 8,
+      "Plan": 13,
+      "Fios": 10,
+      "Welcome": 2,
+      "Ultimate": 2,
+      "Plus": 3,
+      "Play": 0,
+      "Do More": 0,
+      "Get More": 0
+    },
+    "readability": {
+      "avg_sentence_length": 23.8,
+      "sentence_count": 28
+    },
+    "geo_score": 92,
+    "formatting_issues": []
+  },
+  "perplexity-search-q2.md": {
+    "word_count": 404,
+    "structure": {
+      "headers": 3,
+      "effective_headers": 3,
+      "bullet_points": 14,
+      "effective_bullets": 20,
+      "bold_phrases": 17
+    },
+    "keywords": {
+      "Verizon": 22,
+      "Unlimited": 4,
+      "5G": 0,
+      "Plan": 2,
+      "Fios": 0,
+      "Welcome": 0,
+      "Ultimate": 2,
+      "Plus": 0,
+      "Play": 0,
+      "Do More": 0,
+      "Get More": 0
+    },
+    "readability": {
+      "avg_sentence_length": 5.7,
+      "sentence_count": 71
+    },
+    "geo_score": 92,
+    "formatting_issues": []
+  },
+  "chatgpt-5-1-agent-q2.md": {
+    "word_count": 1491,
+    "structure": {
+      "headers": 0,
+      "effective_headers": 7,
+      "bullet_points": 0,
+      "effective_bullets": 14,
+      "bold_phrases": 0
+    },
+    "keywords": {
+      "Verizon": 14,
+      "Unlimited": 34,
+      "5G": 1,
+      "Plan": 35,
+      "Fios": 0,
+      "Welcome": 12,
+      "Ultimate": 22,
+      "Plus": 7,
+      "Play": 0,
+      "Do More": 0,
+      "Get More": 0
+    },
+    "readability": {
+      "avg_sentence_length": 14.9,
+      "sentence_count": 100
+    },
+    "geo_score": 74,
+    "formatting_issues": [
+      "Implicit Headers",
+      "Implicit Lists",
+      "No Bold Text"
+    ]
+  },
+  "perplexity-research-q4.md": {
+    "word_count": 1386,
+    "structure": {
+      "headers": 7,
+      "effective_headers": 7,
+      "bullet_points": 16,
+      "effective_bullets": 90,
+      "bold_phrases": 73
+    },
+    "keywords": {
+      "Verizon": 18,
+      "Unlimited": 5,
+      "5G": 0,
+      "Plan": 13,
+      "Fios": 3,
+      "Welcome": 3,
+      "Ultimate": 0,
+      "Plus": 3,
+      "Play": 0,
+      "Do More": 0,
+      "Get More": 0
+    },
+    "readability": {
+      "avg_sentence_length": 9.9,
+      "sentence_count": 140
+    },
+    "geo_score": 79,
+    "formatting_issues": []
+  },
+  "chatgpt-5-1-agent-q3.md": {
+    "word_count": 1963,
+    "structure": {
+      "headers": 11,
+      "effective_headers": 11,
+      "bullet_points": 24,
+      "effective_bullets": 36,
+      "bold_phrases": 25
+    },
+    "keywords": {
+      "Verizon": 34,
+      "Unlimited": 32,
+      "5G": 33,
+      "Plan": 8,
+      "Fios": 32,
+      "Welcome": 10,
+      "Ultimate": 14,
+      "Plus": 21,
+      "Play": 1,
+      "Do More": 0,
+      "Get More": 0
+    },
+    "readability": {
+      "avg_sentence_length": 15.0,
+      "sentence_count": 131
+    },
+    "geo_score": 100,
+    "formatting_issues": []
+  },
+  "perplexity-search-q3.md": {
+    "word_count": 715,
+    "structure": {
+      "headers": 11,
+      "effective_headers": 11,
+      "bullet_points": 34,
+      "effective_bullets": 54,
+      "bold_phrases": 46
+    },
+    "keywords": {
+      "Verizon": 33,
+      "Unlimited": 12,
+      "5G": 8,
+      "Plan": 8,
+      "Fios": 8,
+      "Welcome": 4,
+      "Ultimate": 5,
+      "Plus": 4,
+      "Play": 1,
+      "Do More": 0,
+      "Get More": 0
+    },
+    "readability": {
+      "avg_sentence_length": 9.4,
+      "sentence_count": 76
+    },
+    "geo_score": 100,
+    "formatting_issues": []
+  },
+  "perplexity-research-q1.md": {
+    "word_count": 914,
+    "structure": {
+      "headers": 11,
+      "effective_headers": 11,
+      "bullet_points": 27,
+      "effective_bullets": 49,
+      "bold_phrases": 25
+    },
+    "keywords": {
+      "Verizon": 52,
+      "Unlimited": 39,
+      "5G": 8,
+      "Plan": 15,
+      "Fios": 2,
+      "Welcome": 8,
+      "Ultimate": 22,
+      "Plus": 4,
+      "Play": 1,
+      "Do More": 0,
+      "Get More": 0
+    },
+    "readability": {
+      "avg_sentence_length": 6.7,
+      "sentence_count": 136
+    },
+    "geo_score": 100,
+    "formatting_issues": []
+  }
+}
